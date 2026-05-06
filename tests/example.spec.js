@@ -21,5 +21,14 @@ test('02 has Google icon', async ({ page }) => {
 test('03 has Search input', async ({ page }) => {
   await page.goto('https://www.google.com/');
   // await expect(page.getByRole('textbox', {name: 'Tìm kiếm'})).click();
-  await page.locator('textarea[name="q"]').click();
+
+  await page.getByRole('combobox', { name: 'Tìm kiếm' }).click();
+
+  // await page.locator('textarea[name="q"]').click();
+
 });
+
+//  Open Google
+//  Detect the input file
+//  Input playwright and enter
+//  Can see "Playwright: Fast and reliable end-to-end testing for modern web apps" in the screen
