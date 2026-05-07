@@ -31,4 +31,16 @@ test('03 has Search input', async ({ page }) => {
 //  Open Google
 //  Detect the input file
 //  Input playwright and enter
+test('04 input search key', async ({ page }) => {
+  await page.goto('https://www.google.com/');
+
+  
+  await page.getByRole('combobox', { name: 'Tìm kiếm' }).fill('playwright');
+
+  await page.getByRole('combobox', { name: 'Tìm kiếm' }).press('Enter');
+  //const popup = await page.waitForEvent('popup');
+  await page.waitForLoadState();
+  await expect(page).toHaveTitle(/Playwright/);
+
+});
 //  Can see "Playwright: Fast and reliable end-to-end testing for modern web apps" in the screen
